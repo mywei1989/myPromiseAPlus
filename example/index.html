@@ -18,9 +18,9 @@
       var promise = doSomething();
       promise.then(function(value) {
         console.log('Got a value:', value);
-      })/*.then(function(value){
+      }).then(function(value){
         console.log('Got the same value again:', value);
-      })*/;
+      });
 
       promise.then(function(value) {
         // 此处获取的值和上一处相同
