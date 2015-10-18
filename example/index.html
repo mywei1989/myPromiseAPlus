@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Transform</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  </head>
+<body>
+  <div class="container">
+
+  </div>
+  <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="../js/promiseaplus.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+
+      //doSomething();
+      var promise = doSomething();
+      promise.then(function(value) {
+        console.log('Got a value:', value);
+      })/*.then(function(value){
+        console.log('Got the same value again:', value);
+      })*/;
+
+      promise.then(function(value) {
+        // 此处获取的值和上一处相同
+        console.log('Got the same value again:', value);
+      });
+    });
+
+
+    function doSomething(){
+      return new Promise(function(resolve,reject){
+        var value = 42;
+        resolve(value);
+        //reject(100);
+      });
+    }
+
+
+
+
+  </script>
+</body>
+</html>
